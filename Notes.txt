@@ -1,0 +1,40 @@
+Say you have a card with values and then valjes are passed to app
+You have to display card value as username
+function Chef() {
+  const food = "Pizza"; // Data the Customer needs
+  return <Waiter food={food} />;
+}
+
+function Waiter({ food }) {
+  // Waiter doesn't use 'food' but passes it to Customer
+  return <Customer food={food} />;
+}
+
+function Customer({ food }) {
+  // Customer consumes 'food'
+  return <h1>Enjoy your {food}!</h1>;
+}
+
+In my project: Main -> UserPage->Orders->OrderContainer
+
+ie we try to make a global file to directly pass values to order OrderContainer
+Context API react ka kaam hai
+Redux: can be used instead of Context but it is external library
+
+How to use
+
+Context folder in src -> UserContext.js file
+UserContext is to be added on top level
+<UserContext>
+<Login>
+<Card>
+<Data>
+<Card/>
+..
+<UserContext>
+
+
+after that in your component after doing the neccesary sh*t
+const {setUser} = useContext(UserContext)
+this setUser will change the user of UserContextProvider.jsx
+user and setUser are objects so use them like {user} and {setUser}
